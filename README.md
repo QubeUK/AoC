@@ -41,6 +41,8 @@ As it may be obvious by my code samples, I'm not a professional developer. I do 
 | 25  |                |    |
 -->
 
+---
+
  <a href="#">
     <img src="python.svg" alt="Solved with Python" style="vertical-align:top margin:6px 4px">
   </a>  
