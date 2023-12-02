@@ -1,2 +1,2 @@
-# AoC
-Advent of Code
+![Header](./AoC-header.png)
+**`QubeUK (IT Professional)`**
