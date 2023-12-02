@@ -15,8 +15,8 @@ As it may be obvious by my code samples, I'm not a professional developer. I do 
 | --- | -------------- | -- |
 | 01  | Trebuchet?!    | ⭐⭐ |
 | 02  | Cube Conundrum | ⭐⭐ |
-<!---
 | 03  |                |    |
+<!---
 | 04  |                |    |
 | 05  |                |    |
 | 06  |                |    |
