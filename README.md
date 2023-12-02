@@ -1,4 +1,4 @@
-![Header](./AoC-header.png)
+![Header](./AoC-header-new.png)
 **`QubeUK (IT Professional)`**
 
 [Advent of Code](http://adventofcode.com/) (AoC) is an annual Advent calendar of programming puzzles. 
