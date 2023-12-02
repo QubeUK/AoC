@@ -4,6 +4,10 @@
 [Advent of Code](http://adventofcode.com/) (AoC) is an annual Advent calendar of programming puzzles. 
 This is the first year that I am participating, and I'm using Python.
 
+As it may be obvious by my code samples, I'm not a professional developer. I do however enjoy problem-solving.
+
+
+
 
 ## Overview
 
@@ -36,3 +40,7 @@ This is the first year that I am participating, and I'm using Python.
 | 24  |                |    |
 | 25  |                |    |
 -->
+
+ <a href="#">
+    <img src="python.svg" alt="Solved with Python" style="vertical-align:top margin:6px 4px">
+  </a>  
