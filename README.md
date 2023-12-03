@@ -12,10 +12,10 @@ As it may be obvious by my code samples, I'm not a professional developer. I do 
 ## Overview
 
 | Day | Name           | Stars |
-| --- | -------------- | -- |
+| --- |----------------| -- |
 | 01  | Trebuchet?!    | ⭐⭐ |
 | 02  | Cube Conundrum | ⭐⭐ |
-| 03  |                |    |
+| 03  | Gear Ratios    |    |
 <!---
 | 04  |                |    |
 | 05  |                |    |
