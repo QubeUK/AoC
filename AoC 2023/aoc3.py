@@ -37,15 +37,16 @@ def prep(q):
             print(f"Working on {q_line[row]}")
             start, finish = q_line[row][2]
             for symbol in symbols:
-                if symbol[0] == 1 and symbol[0] in range(start, finish):
+                print(symbol)
+                if symbol[0] == 1 and symbol[0] in range(start, finish+1):
                     print(f"Adding inline {q_line[row][1]}")
                     total.append(q_line[row][1])
                     q_line[row][1] = 0
                 if symbol[0] == 0 or symbol[0] == 2:
                     check.append([symbol[1]-1, symbol[1], symbol[1]+1])
                     my_set = {i for lst in check for i in lst}
-            for x in my_set:
-                if x in range(start, finish+1):
+            for pos in my_set:
+                if pos in range(start, finish+1):
                     print(f"Adding above below {q_line[row][1]}")
                     total.append(q_line[row][1])
                     break
