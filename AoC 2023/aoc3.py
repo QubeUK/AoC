@@ -14,7 +14,7 @@ def main():
             q.put(line)
             if q.full():
                 prep(q)
-    print(f"Total of Valid Gears: {sum(total)}")
+    print(f"Missing Part Number: {sum(total)}")
 
 
 def prep(q):
@@ -36,17 +36,14 @@ def prep(q):
         if q_line[row][0] == 1:
             print(f"Working on {q_line[row]}")
             start, finish = q_line[row][2]
-            print(f"Position {start}-{finish}")
             for symbol in symbols:
                 if symbol[0] == 1 and symbol[0] in range(start, finish):
                     print(f"Adding inline {q_line[row][1]}")
                     total.append(q_line[row][1])
                     q_line[row][1] = 0
-
                 if symbol[0] == 0 or symbol[0] == 2:
                     check.append([symbol[1]-1, symbol[1], symbol[1]+1])
                     my_set = {i for lst in check for i in lst}
-            print(my_set)
             for x in my_set:
                 if x in range(start, finish+1):
                     print(f"Adding above below {q_line[row][1]}")
@@ -56,22 +53,11 @@ def prep(q):
             check.clear()
             my_set.clear()
 
-
-
-
-
     print(total)
     symbols.clear()
     q_line.clear()
     q.get()
     return q_line
-
-
-'''
-qline if len == 3 NUMBER - Q(0-3), Number. (Start, Finish)
-qline if len == 2 SYMBOL - Q(0-3), Position
-'''
-
 
 
 if __name__ == "__main__":
