@@ -4,6 +4,7 @@ from queue import Queue
 total = []
 symbols = []
 q_line = []
+check = []
 q = Queue(maxsize=3)
 
 
@@ -24,18 +25,43 @@ def prep(q):
         if len(nums) > 0:
             for num in range(len(nums)):
                 start = q.queue[y].find(nums[num])
-                finish = start + len(nums[num])
+                finish = start + len(nums[num])-1
                 q_line.append([y, int(nums[num]), (start, finish)])
 
         for x in range(len(q.queue[y])):
-            if not (regex.search(q.queue[y][x]) == None):
-                q_line.append([y, x])
-        symbols.clear()
+            if not (regex.search(q.queue[y][x]) is None):
+                symbols.append([y, x])
 
-    print(q_line)
-    ''' do logic here'''
+    for row in range(len(q_line)):
+        if q_line[row][0] == 1:
+            print(f"Working on {q_line[row]}")
+            start, finish = q_line[row][2]
+            print(f"Position {start}-{finish}")
+            for symbol in symbols:
+                if symbol[0] == 1 and symbol[0] in range(start, finish):
+                    print(f"Adding inline {q_line[row][1]}")
+                    total.append(q_line[row][1])
+                    q_line[row][1] = 0
 
-    # total.append(num)
+                if symbol[0] == 0 or symbol[0] == 2:
+                    check.append([symbol[1]-1, symbol[1], symbol[1]+1])
+                    my_set = {i for lst in check for i in lst}
+            print(my_set)
+            for x in my_set:
+                if x in range(start, finish+1):
+                    print(f"Adding above below {q_line[row][1]}")
+                    total.append(q_line[row][1])
+                    break
+
+            check.clear()
+            my_set.clear()
+
+
+
+
+
+    print(total)
+    symbols.clear()
     q_line.clear()
     q.get()
     return q_line
