@@ -9,7 +9,7 @@ q = Queue(maxsize=3)
 
 
 def main():
-    with open("aoc3-test.txt", "r") as file:
+    with open("aoc3.txt", "r") as file:
         for line in file:
             q.put(line)
             if q.full():
@@ -18,8 +18,8 @@ def main():
 
 
 def prep(q):
-    print(f"\nCurrent Queue: {q.queue}")
-    regex = re.compile(r'[@_!#$%^&*+()\-<>?/|}{~:]')
+    print(f"\n{q.queue[0]}{q.queue[1]}{q.queue[2]}")
+    regex = re.compile(r'[@_!#$%^&*+=()\-<>?/|}{~:]')
     for y in range(len(q.queue)):
         nums = re.findall(r'\d+', q.queue[y])
         if len(nums) > 0:
@@ -34,11 +34,9 @@ def prep(q):
 
     for row in range(len(q_line)):
         if q_line[row][0] == 1:
-            print(f"Working on {q_line[row]}")
             start, finish = q_line[row][2]
             for symbol in symbols:
-                print(symbol)
-                if symbol[0] == 1 and symbol[0] in range(start, finish+1):
+                if symbol[0] == 1 and symbol[1] in range(start-1, finish+2):
                     print(f"Adding inline {q_line[row][1]}")
                     total.append(q_line[row][1])
                     q_line[row][1] = 0
@@ -63,3 +61,6 @@ def prep(q):
 
 if __name__ == "__main__":
     main()
+
+#    517021 = Actual Answer
+    
